@@ -235,19 +235,24 @@
       font-size: 12px; color: #1e293b; }
 
     /* Footer */
-    footer { padding: 60px 0 30px; margin-top: 40px; }
-    .footer-card { padding: 40px 36px; border-radius: 24px;
-      background: linear-gradient(135deg, rgba(99,102,241,.10), rgba(139,92,246,.10));
-      backdrop-filter: blur(20px); border: 1px solid rgba(99,102,241,.18);
-      box-shadow: 0 16px 40px rgba(99,102,241,.10); text-align: center; }
-    .footer-brand { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-    .footer-brand .logo { font-size: 18px; justify-content: center; }
-    .footer-brand p { color: var(--soft); font-size: 13px; line-height: 1.7; max-width: 520px; }
-    .footer-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.4);
-      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 18px;
-      font-size: 12px; color: var(--mute); }
-    .footer-bottom a { color: var(--brand); }
-    .footer-bottom .sep { color: var(--mute); opacity: .5; }
+    footer { margin-top: 40px; padding: 54px 0 30px; background: #0e1b33; color: #cdd9ef; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; align-items: start; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 18px; font-weight: 700; }
+    .footer-brand .mark { width: 42px; height: 42px; border-radius: 10px; overflow: hidden; display: grid; place-items: center; background: var(--grad); }
+    .footer-brand .mark img { width: 100%; height: 100%; object-fit: contain; }
+    .footer-brand .name-en { display: block; color: #9fb2d6; font-size: 11px; font-weight: 500; letter-spacing: .5px; margin-top: 2px; }
+    .footer-desc { margin-top: 14px; color: #9fb2d6; font-size: 14px; max-width: 300px; }
+    footer h5 { color: #fff; font-size: 15px; margin-bottom: 14px; font-weight: 700; }
+    .footer-nav { list-style: none; }
+    .footer-nav li { margin-bottom: 9px; font-size: 14px; }
+    .footer-nav a:hover { color: #fff; }
+    .footer-social { display: flex; flex-direction: column; align-items: flex-start; }
+    .footer-social .qr { background: #fff; border-radius: 14px; padding: 12px; width: 156px; }
+    .footer-social .qr img { width: 100%; display: block; border-radius: 8px; }
+    .footer-social .cap { color: #0e1b33; font-size: 12px; text-align: center; margin-top: 8px; font-weight: 600; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 40px; padding-top: 20px;
+      font-size: 13px; color: #7e90b3; text-align: center; }
+    .footer-bottom a { color: #9fb2d6; }
 
     /* Reveal */
     .reveal { opacity: 0; transform: translateY(30px);
@@ -271,6 +276,8 @@
       .features-grid, .scenarios { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 36px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-social { align-items: flex-start; }
     }
   </style>
 </head>
@@ -644,26 +651,33 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-card reveal">
-        <div class="footer-brand">
-          <a class="logo" href="#top">
+    <div class="container footer-wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="#top">
             <span class="mark"><img src="icon.svg" alt="瞬图优化" /></span>
-            <div>
-              <div class="name-cn">瞬图优化</div>
-              <span class="name-en">Shuntu Optimize</span>
-            </div>
+            <span><span>瞬图优化</span><span class="name-en">SHUNTU OPTIMIZE</span></span>
           </a>
-          <p>专注于图片资产智能化、辅助用户节省空间、提升效率。让每一张图片都更快、更轻。</p>
+          <p class="footer-desc">专注于图片资产智能化、辅助用户节省空间、提升效率。让每一张图片都更快、更轻。</p>
         </div>
-        <div class="footer-bottom">
-          <span>© 2026 宇境 · 瞬图优化 Shuntu Optimize · 当前版本 v1.2.5</span>
-          <span class="sep">·</span>
-          <span>问题反馈：<a href="mailto:shuntool@163.com">shuntool@163.com</a></span>
-          <span class="sep">·</span>
-          <span>MIT License</span>
+        <div>
+          <h5>导航</h5>
+          <ul class="footer-nav">
+            <li><a href="#features">核心功能</a></li>
+            <li><a href="#download">下载</a></li>
+            <li><a href="#steps">使用教程</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h5>关注宇境公众号</h5>
+          <div class="qr">
+            <img src="assets/宇境公众号二维码.jpg" alt="宇境公众号二维码" />
+            <div class="cap">扫码关注 · 获取更新</div>
+          </div>
         </div>
       </div>
+      <div class="footer-bottom">© 2026 宇境 · 瞬图优化 Shuntu Optimize　|　让每一张图片都更快、更轻<br>问题反馈：<a href="mailto:shuntool@163.com">shuntool@163.com</a>　|　MIT License</div>
     </div>
   </footer>
 
